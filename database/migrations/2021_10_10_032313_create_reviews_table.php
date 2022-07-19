@@ -20,7 +20,7 @@ class CreateReviewsTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('product_id');
             $table->foreign('user_id')->references('id')->on('users')->default(1);
-            $table->foreign('product_id')->references('id')->on('products')->default(1);
+            $table->foreign('product_id')->references('id')->on('products')->default(1)->onDelete('cascade');
 
             $table->timestamps();
         });
