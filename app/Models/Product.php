@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     use HasFactory;
-    protected $fillable = ['name', 'price', "manufacturer_id", "manufacturer", "description", "url" ];
+    protected $fillable = ['name', 'price', "manufacturer_id", "manufacturer", "description", "url", "image" ];
 
     function manufacturer(){
         return $this->belongsTo('App\Models\Manufacturer');

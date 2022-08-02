@@ -19,6 +19,7 @@
         <input type="text" name="manufacturer" value="{{$product->manufacturer}}"><br></p>
         <input type="text" name="description" value="{{$product->description}}"><br></p>
         <input type="text" name="url" value="{{$product->url}}"><br></p>
+        <input type="text" name="image" value="{{$product->image}}"><br></p>
 
         <input type="submit" value="Update">
     </form>

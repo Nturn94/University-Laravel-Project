@@ -53,7 +53,8 @@ class ProductController extends Controller
             'price' => 'required|numeric|gte:0',
             'manufacturer' =>'required|max:255',
             'description' => 'required|max:255',
-            'url' => 'url'
+            'url' => 'url',
+            'image' => 'url'
             ]);
         
         $product = new Product();
@@ -63,6 +64,7 @@ class ProductController extends Controller
         $product->manufacturer = $request->manufacturer;
         $product->description = $request->description;
         $product->url = $request->url;
+        $product->image = $request->image;
         $product->save();
         return redirect("product/$product->id");
         }
@@ -101,7 +103,7 @@ class ProductController extends Controller
             // return view('products.show')->with('product', $product);
             return view('products.edit_form')->with('product', $product);
         }else{
-            return redirect('product');
+            return view('products.show');
         }
         
         // $product->save();
@@ -124,7 +126,9 @@ class ProductController extends Controller
             'price' => 'required|numeric|gte:0',
             'manufacturer' =>'required|max:255',
             'description' => 'required|max:255',
-            'url' => 'url'
+            'url' => 'url',
+            'image' => 'url'
+
             ]);
 
 
@@ -140,6 +144,7 @@ class ProductController extends Controller
                 $product->manufacturer = $request->manufacturer;
                 $product->description = $request->description;
                 $product->url = $request->url;
+                $product->image = $request->image;
 
                 $product->save();
                 return redirect('product/$product->id');
@@ -152,6 +157,7 @@ class ProductController extends Controller
                 $product->manufacturer = $request->manufacturer;
                 $product->description = $request->description;
                 $product->url = $request->url;
+                $product->image = $request->image;
                 $product->save();
                 return redirect("product/$product->id");
             }
@@ -175,4 +181,7 @@ class ProductController extends Controller
         // $products = Product::all();
         // return view('products.index')->with('products', $products);
     }
+
+
+
 }

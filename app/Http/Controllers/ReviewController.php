@@ -148,7 +148,9 @@ class ReviewController extends Controller
     {
 
         $review=Review::find($id);
+        $productid = $review->product_id;
         $review->delete();
-        return redirect('product');
+        return redirect("product/$productid");
+        // return redirect('product');
     }
 }

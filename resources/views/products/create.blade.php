@@ -7,7 +7,7 @@
 
 
 @section('content')
-    <h1>Create a new Product</h1>
+    <h1 style="color:#66FCF1">Create a new Product</h1>
     @if (count($errors) > 0)
         <div class="alert">
             <ul>
@@ -27,6 +27,7 @@
         <p><label>Manufacturer: </label><input type="text" name="manufacturer" value="{{old('manufacturer') }}"></p>
         <p><label>Description: </label><input type="text" name="description" value="{{old('description') }}"></p>
         <p><label>URL: </label><input type="text" name="url" value="{{old('url') }}"></p>
+        <p><label>ImageURL: </label><input type="text" name="image" value="{{old('image') }}"></p>
 
         <input type="submit" value="Create">
     </form>

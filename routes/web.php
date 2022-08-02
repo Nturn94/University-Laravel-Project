@@ -48,6 +48,8 @@ Route::get('/documentation', function () {
 Route::resource('product', ProductController::class);
 Route::resource('review', ReviewController::class);
 
+Route::put('/store-comment',[ReviewController::class,'store'])->name('review.store');
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
